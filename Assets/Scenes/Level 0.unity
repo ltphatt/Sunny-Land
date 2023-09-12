@@ -465,6 +465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6591255291059034510, guid: 0aa0433c592ffd44e93f3705d212b898, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22174,11 +22178,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -5723873688886266242, guid: 02dce921fc206664991edb32ca5ae76b, type: 3}
       propertyPath: hurtForce
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -5723873688886266242, guid: 02dce921fc206664991edb32ca5ae76b, type: 3}
       propertyPath: healthPoint
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637619855207705495, guid: 02dce921fc206664991edb32ca5ae76b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5145970837302299904, guid: 02dce921fc206664991edb32ca5ae76b, type: 3}
       propertyPath: m_Name

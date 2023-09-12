@@ -15,8 +15,8 @@ public class Player : MonoBehaviour
     BoxCollider2D feetCollider2D;
     CapsuleCollider2D bodyCollider2D;
     bool isJumping;
-
     bool isAlive = true;
+    public bool isFalling = false;
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         Run();
         FlipSprite();
         OnLand();
-        Hurt();
+        isFalling = isJumping && rb.velocity.y < 0.1f;
     }
 
     void OnMove(InputValue value)
@@ -114,39 +114,26 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            bool isHigherThanEnemy = rb.transform.position.y > other.gameObject.transform.position.y;
-            if (isJumping && isHigherThanEnemy)
+            if (isFalling)
             {
                 Destroy(other.gameObject);
                 rb.velocity += new Vector2(0f, jumpSpeed);
             }
-
-            // if (feetCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            // {
-            //     if (other.gameObject.transform.position.x > transform.position.x)
-            //     {
-            //         rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
-            //         Debug.Log("Ouch left");
-            //     }
-            //     else
-            //     {
-            //         rb.velocity = new Vector2(hurtForce, rb.velocity.y);
-            //         Debug.Log("Ouch right");
-            //     }
-            // }
+            else
+            {
+                if (other.gameObject.transform.position.x > this.transform.position.x)
+                {
+                    rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
+                    Debug.Log("Ouch Left");
+                }
+                else
+                {
+                    rb.velocity = new Vector2(hurtForce, rb.velocity.y);
+                    Debug.Log("Ouch Right");
+                }
+                TakeDamage();
+            }
         }
-    }
-
-    void Hurt()
-    {
-        if (bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemies")))
-        {
-            // isAlive = false;
-            rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
-            TakeDamage();
-        }
-
-        animator.SetBool("isHurting", bodyCollider2D.IsTouchingLayers(LayerMask.GetMask("Enemies")));
     }
 
     void TakeDamage()
@@ -160,6 +147,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
+        isAlive = false;
         Destroy(gameObject);
     }
 }
