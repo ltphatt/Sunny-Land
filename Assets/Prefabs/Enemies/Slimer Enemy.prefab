@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 4271565955834383418}
   - component: {fileID: 8542702094495396582}
   - component: {fileID: 3609408080422347554}
+  - component: {fileID: 2150735173405838749}
   m_Layer: 8
   m_Name: Slimer
   m_TagString: Enemy
@@ -249,6 +250,22 @@ MonoBehaviour:
   waypointRight: {fileID: 360899751393544704}
   runSpeed: 100
   fixedlyTime: 3
+  healthPoint: 2
+--- !u!114 &2150735173405838749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841672608928761066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79069afc022ef8f47aabe4106f8832ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  health: 1
+  score: 10
 --- !u!1 &5827415742485363957
 GameObject:
   m_ObjectHideFlags: 0

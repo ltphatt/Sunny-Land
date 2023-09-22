@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 7400868508462824379}
   - component: {fileID: 3027188055150873311}
   - component: {fileID: 1782750513849760362}
+  - component: {fileID: 6488706955327605723}
   m_Layer: 8
   m_Name: Dino
   m_TagString: Enemy
@@ -259,6 +260,22 @@ MonoBehaviour:
   waypointRight: {fileID: 2085785882887735493}
   runSpeed: 150
   fixedlyTime: 3
+  healthPoint: 2
+--- !u!114 &6488706955327605723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377550224795505599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79069afc022ef8f47aabe4106f8832ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  health: 1
+  score: 10
 --- !u!1 &6573485826741127618
 GameObject:
   m_ObjectHideFlags: 0

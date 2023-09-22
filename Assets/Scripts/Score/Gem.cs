@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
+    [SerializeField] private int scoreValue = 10;
     bool wasColected = false;
     Animator animator;
+    ScoreKeeper scoreKeeper;
+
+    void Awake()
+    {
+        scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
 
     void Start()
     {
@@ -21,6 +28,7 @@ public class Gem : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && !wasColected)
         {
+            scoreKeeper.ModifyScore(scoreValue);
             wasColected = true;
             StartCoroutine(Feedback());
         }
@@ -31,4 +39,5 @@ public class Gem : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
+
 }

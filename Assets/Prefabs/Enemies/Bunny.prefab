@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6428774588435771513}
   - component: {fileID: 1141291238571474869}
   - component: {fileID: 5278340406155630987}
+  - component: {fileID: 5680933328109749200}
   m_Layer: 8
   m_Name: Bunny
   m_TagString: Enemy
@@ -230,3 +231,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0484581, y: 1.2703731}
   m_EdgeRadius: 0
+--- !u!114 &5680933328109749200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206715622799678469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79069afc022ef8f47aabe4106f8832ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  health: 1
+  score: 10

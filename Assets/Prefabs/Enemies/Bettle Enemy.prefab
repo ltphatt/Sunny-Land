@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2025533710193749200}
   - component: {fileID: 1444126884268020745}
   - component: {fileID: 442331348460326396}
+  - component: {fileID: 2857240158546673234}
   m_Layer: 8
   m_Name: Bettle
   m_TagString: Enemy
@@ -187,6 +188,21 @@ MonoBehaviour:
   waypointBottom: {fileID: 5812320111308160934}
   flySpeed: 100
   fixedlyTime: 1
+--- !u!114 &2857240158546673234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876737490928486816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79069afc022ef8f47aabe4106f8832ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  health: 1
+  score: 10
 --- !u!1 &4515059873141479766
 GameObject:
   m_ObjectHideFlags: 0

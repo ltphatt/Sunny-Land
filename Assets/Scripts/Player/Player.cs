@@ -5,13 +5,11 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] int healthPoint = 10;
     [SerializeField] float moveSpeed = 1f;
-    [SerializeField] float jumpSpeed = 1f;
-    [SerializeField] float hurtForce = 10f;
+    [SerializeField] public float jumpSpeed = 1f;
     Animator animator;
     Vector2 moveInput;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     BoxCollider2D feetCollider2D;
     CapsuleCollider2D bodyCollider2D;
     bool isJumping;
@@ -107,47 +105,5 @@ public class Player : MonoBehaviour
             bodyCollider2D.offset = new Vector2(-0.025f, -0.3f);
             moveSpeed = 8f;
         }
-    }
-
-    // Attacking enemy via jumping
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            if (isFalling)
-            {
-                Destroy(other.gameObject);
-                rb.velocity += new Vector2(0f, jumpSpeed);
-            }
-            else
-            {
-                if (other.gameObject.transform.position.x > this.transform.position.x)
-                {
-                    rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
-                    Debug.Log("Ouch Left");
-                }
-                else
-                {
-                    rb.velocity = new Vector2(hurtForce, rb.velocity.y);
-                    Debug.Log("Ouch Right");
-                }
-                TakeDamage();
-            }
-        }
-    }
-
-    void TakeDamage()
-    {
-        healthPoint--;
-        if (healthPoint <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        isAlive = false;
-        Destroy(gameObject);
     }
 }

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7393330079214970489}
   - component: {fileID: 7790157311392674933}
   - component: {fileID: 5531352633106418278}
+  - component: {fileID: 5965102759475996990}
   m_Layer: 8
   m_Name: Pig
   m_TagString: Enemy
@@ -230,3 +231,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09152222, y: 0.8612361}
   m_EdgeRadius: 0
+--- !u!114 &5965102759475996990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415334592009119848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79069afc022ef8f47aabe4106f8832ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  health: 1
+  score: 10
