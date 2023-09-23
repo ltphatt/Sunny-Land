@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
         return health;
     }
 
+    // Decrease HP
     void TakeDamage()
     {
         health--;
@@ -38,6 +39,7 @@ public class Health : MonoBehaviour
         }
     }
 
+    // Die when HP reach 0
     void Die()
     {
         if (!isPlayer)
@@ -52,13 +54,14 @@ public class Health : MonoBehaviour
         }
     }
 
+    // Wait for a few second before enemy is dead
     IEnumerator EnemyDead()
     {
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 
-    // Attacking enemy via jumping
+    // Collision with other object
     void OnCollisionEnter2D(Collision2D other)
     {
         // If this game object is enemy
@@ -73,6 +76,7 @@ public class Health : MonoBehaviour
         }
     }
 
+    // Enemy interact to player
     void InteractWithPlayer(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -84,6 +88,7 @@ public class Health : MonoBehaviour
         }
     }
 
+    // Player interact to enemy
     void InteractWithEnemy(Collision2D other)
     {
         if (other.gameObject.tag == "Enemy")
