@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class Health : MonoBehaviour
 {
@@ -113,9 +114,20 @@ public class Health : MonoBehaviour
                     player.transform.position = new Vector2(posX + hurtForce, posY);
                 }
 
+                // SetAnimation();
+                StartCoroutine(SetAnimation());
+
                 // Player is decreased HP
                 TakeDamage();
             }
         }
+    }
+
+    IEnumerator SetAnimation()
+    {
+        anim.SetBool("isHurting", true);
+
+        yield return new WaitForSeconds(0.25f);
+        anim.SetBool("isHurting", false);
     }
 }

@@ -8,7 +8,6 @@ public class Dog : MonoBehaviour
     [SerializeField] GameObject waypointRight;
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float fixedlyTime = 3f;
-    [SerializeField] float healthPoint = 2;
     Collider2D coll;
     Rigidbody2D rb;
     float leftCap = 0f;
@@ -79,10 +78,5 @@ public class Dog : MonoBehaviour
                 isFacingLeft = true;
             }
         }
-    }
-
-    float GetHealth()
-    {
-        return healthPoint;
     }
 }
