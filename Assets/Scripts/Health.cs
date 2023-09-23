@@ -11,7 +11,6 @@ public class Health : MonoBehaviour
     [SerializeField] private float hurtForce = 2.5f;
     ScoreKeeper scoreKeeper;
     Player player;
-
     Animator anim;
 
     void Awake()
@@ -65,41 +64,52 @@ public class Health : MonoBehaviour
         // If this game object is enemy
         if (!isPlayer)
         {
-            if (other.gameObject.tag == "Player")
-            {
-                if (player.isFalling)
-                {
-                    TakeDamage();
-                }
-            }
+            InteractWithPlayer(other);
         }
         // If this game object is player
         else
         {
-            if (other.gameObject.tag == "Enemy")
+            InteractWithEnemy(other);
+        }
+    }
+
+    void InteractWithPlayer(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (player.isFalling)
             {
-                if (player.isFalling)
-                {
-                    player.rb.velocity += new Vector2(0f, player.jumpSpeed);
-                }
-                else
-                {
-                    float posX = player.transform.position.x;
-                    float posY = player.transform.position.y;
+                TakeDamage();
+            }
+        }
+    }
 
-                    // Player is on the left of the enemy
-                    if (player.rb.velocity.x < other.gameObject.transform.position.x)
-                    {
-                        player.transform.position = new Vector2(posX - hurtForce, posY);
-                    }
-                    // Player is on the right of the enemy
-                    else if (player.rb.velocity.x >= other.gameObject.transform.position.x)
-                    {
-                        player.transform.position = new Vector2(posX + hurtForce, posY);
-                    }
+    void InteractWithEnemy(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            if (player.isFalling)
+            {
+                player.rb.velocity += new Vector2(0f, player.jumpSpeed);
+            }
+            else
+            {
+                float posX = player.transform.position.x;
+                float posY = player.transform.position.y;
 
-                    TakeDamage();
+                // Player is on the left of the enemy
+                if (posX < other.gameObject.transform.position.x)
+                {
+                    player.transform.position = new Vector2(posX - hurtForce, posY);
                 }
+                // Player is on the right of the enemy
+                else if (posX >= other.gameObject.transform.position.x)
+                {
+                    player.transform.position = new Vector2(posX + hurtForce, posY);
+                }
+
+                // Player is decreased HP
+                TakeDamage();
             }
         }
     }
