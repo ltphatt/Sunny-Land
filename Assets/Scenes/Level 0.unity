@@ -16331,6 +16331,7 @@ MonoBehaviour:
   isPlayer: 0
   health: 2
   score: 10
+  hurtForce: 2.5
 --- !u!1001 &987387235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17028,6 +17029,7 @@ MonoBehaviour:
   isPlayer: 0
   health: 1
   score: 10
+  hurtForce: 2.5
 --- !u!1 &1417517461
 GameObject:
   m_ObjectHideFlags: 0
@@ -22754,10 +22756,10 @@ SceneRoots:
   - {fileID: 4719837517720188405}
   - {fileID: 148642148}
   - {fileID: 2079534052}
-  - {fileID: 6186882606381193684}
-  - {fileID: 5819561621183859600}
   - {fileID: 1230330738}
+  - {fileID: 6186882606381193684}
   - {fileID: 8618900872470255220}
   - {fileID: 1271908162}
   - {fileID: 1950612227}
   - {fileID: 512450284}
+  - {fileID: 5819561621183859600}
