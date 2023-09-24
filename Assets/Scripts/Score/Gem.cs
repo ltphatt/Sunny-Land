@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gem : MonoBehaviour
 {
-    [SerializeField] private int scoreValue = 10;
+    [SerializeField] private int scoreValue = 1;
     bool wasColected = false;
     Animator animator;
     ScoreKeeper scoreKeeper;
@@ -29,6 +29,8 @@ public class Gem : MonoBehaviour
         if (other.gameObject.tag == "Player" && !wasColected)
         {
             scoreKeeper.ModifyScore(scoreValue);
+
+            scoreKeeper.ModifyGem();
             wasColected = true;
             StartCoroutine(Feedback());
         }

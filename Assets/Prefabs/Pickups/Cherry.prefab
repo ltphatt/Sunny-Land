@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8974263007323972972}
   - component: {fileID: 5173890024479943317}
   - component: {fileID: 3698768674276895616}
-  - component: {fileID: 4466375322296976090}
+  - component: {fileID: 3298820129982878318}
   m_Layer: 10
   m_Name: Cherry
   m_TagString: Untagged
@@ -171,7 +171,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4466375322296976090
+--- !u!114 &3298820129982878318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3344259905276378917}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f311c9371e71a9d41b0f471ab1bea4c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f5651df25e034a43abe14ca9b9ed529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreValue: 1
