@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     BoxCollider2D feetCollider2D;
     CapsuleCollider2D bodyCollider2D;
     bool isJumping;
-    bool isAlive = true;
+    public bool isAlive = true;
     public bool isFalling = false;
 
     void Start()

@@ -51,6 +51,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            player.isAlive = false;
             Destroy(gameObject);
         }
     }
