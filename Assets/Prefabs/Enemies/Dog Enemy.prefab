@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 1602970195844799954}
   - component: {fileID: 6591255291059034510}
   - component: {fileID: 469509415912912348}
+  - component: {fileID: 7907594735510137614}
   m_Layer: 8
   m_Name: Dog
   m_TagString: Enemy
@@ -95,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 5759088233123199627}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -67.5, y: -3.153, z: 0}
+  m_LocalPosition: {x: -67.5, y: -3.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -262,6 +263,22 @@ MonoBehaviour:
   waypointRight: {fileID: 9038367884858694291}
   runSpeed: 100
   fixedlyTime: 3
+--- !u!114 &7907594735510137614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5759088233123199627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79069afc022ef8f47aabe4106f8832ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  health: 1
+  score: 10
+  hurtForce: 2.5
 --- !u!1 &9038367884858694291
 GameObject:
   m_ObjectHideFlags: 0

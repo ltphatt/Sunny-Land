@@ -53,4 +53,9 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void Back()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

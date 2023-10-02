@@ -264,6 +264,7 @@ MonoBehaviour:
   moveSpeed: 8
   jumpSpeed: 23
   rb: {fileID: 0}
+  isAlive: 1
   isFalling: 0
 --- !u!114 &8427100636740064704
 MonoBehaviour:
@@ -280,3 +281,4 @@ MonoBehaviour:
   isPlayer: 1
   health: 5
   score: 10
+  hurtForce: 1.5
